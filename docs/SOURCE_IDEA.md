@@ -1,14 +1,9 @@
-# Source Idea: Mountain Highway Tunnel Lining Crack Recognition
-
-This document preserves the slide-by-slide content of the thesis presentation that inspired this project. The original images are kept locally at `../../简历版本/海尔-MEDP智造技术研发/PPT中间形态-山区高速公路隧道衬砌裂缝识别_图片/`.
-
 # 山区高速公路隧道移动检测衬砌裂缝图像智能识别算法及系统开发研究
 
+> 本文件为相关学位论文答辩 PPT 的逐页内容整理，仅用于技术思路参考。原始截图保存在本地 `../../简历版本/海尔-MEDP智造技术研发/PPT中间形态-山区高速公路隧道衬砌裂缝识别_图片/`。
+
 ## 答辩基本信息
-- **学位申请**：申请同济大学工学硕士学位论文答辩
 - **论文题目**：山区高速公路隧道移动检测衬砌裂缝图像智能识别算法及系统开发研究
-- **答辩人**：罗世卫
-- **导师**：谢雄耀 教授、周彪 教授
 - **培养单位**：同济大学土木工程学院
 - **答辩日期**：2025 年 5 月 18 日
 
@@ -570,6 +565,4 @@ This document preserves the slide-by-slide content of the thesis presentation th
 ## 致谢（Slide 82）
 - 感谢各位专家、老师的指导。
 - 感谢同济大学土木工程学院。
-- 答辩人：罗世卫。
-- 导师：谢雄耀 教授、周彪 教授。
 - 日期：2025 年 5 月 18 日。
