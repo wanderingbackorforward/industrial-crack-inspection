@@ -1,0 +1,35 @@
+task: segmentation
+model:
+  name: deeplabv3plus
+  encoder: resnet50
+  in_channels: 3
+  classes: 1
+
+data:
+  train_root: data/processed/train_seg
+  val_root: data/processed/val_seg
+  image_size: 512
+  batch_size: 8
+  num_workers: 4
+  aug:
+    horizontal_flip: 0.5
+    rotate15: true
+    color_jitter: 0.2
+
+training:
+  epochs: 100
+  lr: 0.0001
+  lr_scheduler: cosine
+  weight_decay: 0.01
+  optimizer: adamw
+  device: cuda
+  mixed_precision: true
+
+checkpoint:
+  save_dir: checkpoints/segmentation
+  save_best: true
+  log_interval: 50
+
+metrics:
+  threshold: 0.5
+  classes: [background, crack]
