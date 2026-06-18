@@ -1,0 +1,41 @@
+# Core
+numpy>=1.24.0
+pillow>=10.0.0
+opencv-python-headless>=4.8.0
+scipy>=1.11.0
+scikit-image>=0.21.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+tqdm>=4.65.0
+pyyaml>=6.0.1
+
+# Deep learning
+torch>=2.0.0
+torchvision>=0.15.0
+torchmetrics>=1.0.0
+segmentation-models-pytorch>=0.3.0
+timm>=0.9.0
+
+# Optional: SAM adapter (CraSAM)
+# segment-anything @ git+https://github.com/facebookresearch/segment-anything.git
+
+# API & web
+fastapi>=0.103.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6
+pydantic>=2.0.0
+
+# Frontend (Node.js managed separately)
+# React deps are in frontend/package.json
+
+# ONNX / deployment
+onnx>=1.14.0
+onnxruntime>=1.16.0
+
+# Tests
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Logging
+wandb>=0.15.0
+tensorboard>=2.13.0

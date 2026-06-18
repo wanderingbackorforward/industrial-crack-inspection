@@ -1,0 +1,17 @@
+dataset_name: crack_dataset
+raw_dir: data/raw
+processed_dir: data/processed
+train_ratio: 0.8
+val_ratio: 0.1
+test_ratio: 0.1
+image_ext: .jpg
+mask_ext: .png
+anno_ext: .json  # COCO format
+classes:
+  - background
+  - crack
+crack_width_grades:
+  - [0.0, 0.1]
+  - [0.1, 0.2]
+  - [0.2, 0.3]
+  - [0.3, 999.0]

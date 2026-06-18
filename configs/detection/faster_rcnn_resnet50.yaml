@@ -1,0 +1,46 @@
+task: detection
+model:
+  name: faster_rcnn
+  backbone: resnet50_fpn
+  num_classes: 5  # background + 4 crack width grades
+  pretrained: true
+  rpn:
+    anchor_sizes: [16, 32, 64, 128, 256]
+    aspect_ratios: [0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0]
+  box:
+    score_thresh: 0.5
+    nms_thresh: 0.5
+    detections_per_img: 300
+
+data:
+  train_root: data/processed/train
+  val_root: data/processed/val
+  image_size: 1024
+  batch_size: 4
+  num_workers: 4
+  aug:
+    horizontal_flip: 0.5
+    vertical_flip: 0.1
+    rotate15: true
+    color_jitter: 0.2
+
+training:
+  epochs: 100
+  lr: 0.01
+  lr_scheduler: step
+  lr_decay_epochs: [40, 70, 90]
+  lr_decay_gamma: 0.33
+  weight_decay: 0.0005
+  optimizer: sgd
+  momentum: 0.9
+  device: cuda
+  grad_clip: 1.0
+
+checkpoint:
+  save_dir: checkpoints/detection
+  save_best: true
+  log_interval: 50
+
+metrics:
+  iou_thresholds: [0.5, 0.75]
+  max_dets: 300

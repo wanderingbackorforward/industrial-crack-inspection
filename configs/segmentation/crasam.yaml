@@ -1,0 +1,39 @@
+task: segmentation
+model:
+  name: crasam
+  image_encoder: vit_b  # sam_vit_b_01ec64
+  checkpoint: null      # path to SAM pretrained weights
+  prompt_dim: 256
+  freeze_image_encoder: true
+  decoder_finetune: true
+
+data:
+  train_root: data/processed/train_seg
+  val_root: data/processed/val_seg
+  image_size: 1024
+  batch_size: 2
+  num_workers: 4
+  aug:
+    horizontal_flip: 0.5
+    rotate15: true
+    color_jitter: 0.2
+    random_scale: [0.8, 1.2]
+
+training:
+  epochs: 50
+  lr: 0.0001
+  lr_scheduler: cosine
+  weight_decay: 0.01
+  optimizer: adamw
+  device: cuda
+  mixed_precision: true
+  prompt_mode: auto  # auto | point | box
+
+checkpoint:
+  save_dir: checkpoints/segmentation
+  save_best: true
+  log_interval: 50
+
+metrics:
+  threshold: 0.5
+  classes: [background, crack]
